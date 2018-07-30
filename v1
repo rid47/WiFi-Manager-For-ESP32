@@ -22,6 +22,10 @@ void setup() {
   Serial.println();
   WiFiManager wifiManager;
   //wifiManager.resetSettings();
+  Serial.print("SSID:");
+  Serial.println(wifiManager.getSSID());
+  Serial.print("Password:");
+  Serial.println(wifiManager.getPassword());
   if (!wifiManager.autoConnect("Mushroom Device", "admin1234")) {
     Serial.println("failed to connect and hit timeout");
     delay(3000);
@@ -29,7 +33,11 @@ void setup() {
     delay(5000);
   }
   Serial.println("connected");
-
+  Serial.print("SSID:");
+  Serial.println(wifiManager.getSSID());
+  Serial.print("Password:");
+  Serial.println(wifiManager.getPassword());
+  
   }
 
 
